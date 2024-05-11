@@ -1,0 +1,22 @@
+[2024-03-03T13:02:14.172+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: HOMIE_AI.scrape_immobiliare_data manual__2024-03-03T13:02:10.859759+00:00 [queued]>
+[2024-03-03T13:02:14.185+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: HOMIE_AI.scrape_immobiliare_data manual__2024-03-03T13:02:10.859759+00:00 [queued]>
+[2024-03-03T13:02:14.186+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-03-03T13:02:14.203+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): scrape_immobiliare_data> on 2024-03-03 13:02:10.859759+00:00
+[2024-03-03T13:02:14.210+0000] {standard_task_runner.py:57} INFO - Started process 104 to run task
+[2024-03-03T13:02:14.215+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'HOMIE_AI', 'scrape_immobiliare_data', 'manual__2024-03-03T13:02:10.859759+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/dag_aihome.py', '--cfg-path', '/tmp/tmpagx076rk']
+[2024-03-03T13:02:14.220+0000] {standard_task_runner.py:85} INFO - Job 111: Subtask scrape_immobiliare_data
+[2024-03-03T13:02:14.283+0000] {task_command.py:416} INFO - Running <TaskInstance: HOMIE_AI.scrape_immobiliare_data manual__2024-03-03T13:02:10.859759+00:00 [running]> on host b761f120d5bf
+[2024-03-03T13:02:14.382+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='HOMIE_AI' AIRFLOW_CTX_TASK_ID='scrape_immobiliare_data' AIRFLOW_CTX_EXECUTION_DATE='2024-03-03T13:02:10.859759+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-03T13:02:10.859759+00:00'
+[2024-03-03T13:02:14.385+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_aihome.py", line 14, in homie_immobiliare_url
+    homie.scrape_data_immobiliare()
+AttributeError: 'HomieAI' object has no attribute 'scrape_data_immobiliare'
+[2024-03-03T13:02:14.402+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=HOMIE_AI, task_id=scrape_immobiliare_data, execution_date=20240303T130210, start_date=20240303T130214, end_date=20240303T130214
+[2024-03-03T13:02:14.418+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 111 for task scrape_immobiliare_data ('HomieAI' object has no attribute 'scrape_data_immobiliare'; 104)
+[2024-03-03T13:02:14.467+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-03-03T13:02:14.488+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

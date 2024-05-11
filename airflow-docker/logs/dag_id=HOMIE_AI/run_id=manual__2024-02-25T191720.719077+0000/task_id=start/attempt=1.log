@@ -1,0 +1,18 @@
+[2024-02-25T19:17:23.178+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: HOMIE_AI.start manual__2024-02-25T19:17:20.719077+00:00 [queued]>
+[2024-02-25T19:17:23.186+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: HOMIE_AI.start manual__2024-02-25T19:17:20.719077+00:00 [queued]>
+[2024-02-25T19:17:23.186+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-02-25T19:17:23.199+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): start> on 2024-02-25 19:17:20.719077+00:00
+[2024-02-25T19:17:23.203+0000] {standard_task_runner.py:57} INFO - Started process 77 to run task
+[2024-02-25T19:17:23.207+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'HOMIE_AI', 'start', 'manual__2024-02-25T19:17:20.719077+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/dag_aihome.py', '--cfg-path', '/tmp/tmpra4b3xwh']
+[2024-02-25T19:17:23.210+0000] {standard_task_runner.py:85} INFO - Job 89: Subtask start
+[2024-02-25T19:17:23.253+0000] {task_command.py:416} INFO - Running <TaskInstance: HOMIE_AI.start manual__2024-02-25T19:17:20.719077+00:00 [running]> on host 1b16272b2364
+[2024-02-25T19:17:23.318+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='HOMIE_AI' AIRFLOW_CTX_TASK_ID='start' AIRFLOW_CTX_EXECUTION_DATE='2024-02-25T19:17:20.719077+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-25T19:17:20.719077+00:00'
+[2024-02-25T19:44:27.583+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2024-02-25T19:44:27.589+0000] {process_utils.py:131} INFO - Sending 15 to group 77. PIDs of all processes in the group: [77]
+[2024-02-25T19:44:27.589+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 77
+[2024-02-25T19:44:27.592+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-02-25T19:44:27.593+0000] {homie_ai.py:36} ERROR - Error occurred while processing page 4561: Task received SIGTERM signal
+[2024-02-25T19:45:27.622+0000] {process_utils.py:149} WARNING - process psutil.Process(pid=77, name='airflow task ru', status='sleeping', started='19:17:22') did not respond to SIGTERM. Trying SIGKILL
+[2024-02-25T19:45:27.624+0000] {process_utils.py:86} INFO - Sending the signal 9 to group 77
+[2024-02-25T19:45:27.639+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=77, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='19:17:22') (77) terminated with exit code -9
+[2024-02-25T19:45:27.640+0000] {standard_task_runner.py:172} ERROR - Job 89 was killed before it finished (likely due to running out of memory)
